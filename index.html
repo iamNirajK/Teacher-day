@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Teacher's Day</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* All existing styles remain the same */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .parallax-header {
+            height: 100vh;
+            background-image: url('parallax-bg.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .parallax-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .parallax-header h1 {
+            font-size: 4rem;
+            z-index: 1;
+            animation: slideInDown 2s ease forwards;
+        }
+
+        .parallax-header p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            z-index: 1;
+            animation: fadeInUp 2s ease forwards;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            z-index: 1;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-down i {
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        .teacher-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 60px 20px;
+            background-color: #ecf0f1;
+        }
+
+        .teacher-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            max-width: 300px;
+            text-align: center;
+            padding: 20px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .teacher-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .teacher-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            animation: rotateIn 1.5s ease forwards;
+        }
+
+        .teacher-card h2 {
+            font-size: 1.8rem;
+            color: #2980b9;
+        }
+
+        .teacher-card p {
+            font-size: 1rem;
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+
+        footer {
+            padding: 20px;
+            background-color: #2c3e50;
+            text-align: center;
+            color: #fff;
+        }
+
+        .social-icons a {
+            color: #ecf0f1;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #f39c12;
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-15px);
+            }
+            60% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @keyframes rotateIn {
+            from {
+                transform: rotate(-360deg);
+                opacity: 0;
+            }
+            to {
+                transform: rotate(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .parallax-header h1 {
+                font-size: 3rem;
+            }
+
+            .parallax-header p {
+                font-size: 1.2rem;
+            }
+
+            .teacher-gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="parallax-header">
+        <h1>Happy Teacher's Day</h1>
+        <p>Thank you to all our teachers for being a wonderful guide 🙏🏼📚</p>
+        <div class="scroll-down">
+            <a href="#gallery"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="background-music.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <section id="gallery" class="teacher-gallery">
+        <div class="teacher-card">
+            <img src="https://d.rapidcdn.app/snapinsta?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJodHRwczovL3Njb250ZW50LWF0bDMtMi5jZG5pbnN0YWdyYW0uY29tL3YvdDUxLjI5MzUwLTE1LzI4NzQwMTE3NF8xMDczMTQ1NTk2NjEyNTEyXzYzMDY3MDkyMjYyNzQ5OTI4NTNfbi53ZWJwP3N0cD1kc3QtanBnX2UzNSZlZmc9ZXlKMlpXNWpiMlJsWDNSaFp5STZJbWx0WVdkbFgzVnliR2RsYmk0ME5qaDRORFk0TG5Oa2NpNW1Namt6TlRBdVpHVm1ZWFZzZEY5cGJXRm5aU0o5Jl9uY19odD1zY29udGVudC1hdGwzLTIuY2RuaW5zdGFncmFtLmNvbSZfbmNfY2F0PTEwNCZfbmNfb2hjPXRuRHQ5R08tTGJZUTdrTnZnSEx3RlBFJmVkbT1BUHMxN0NVQkFBQUEmY2NiPTctNSZvaD0wMF9BWUI4aTRTLXg3ZUdXQnFKQloxQ2c3aU1KU3lhQ2RMaGt1SHlaT2J1MGQ0UFhnJm9lPTY2REU3QTE5Jl9uY19zaWQ9MTBkMTNiIiwiZmlsZW5hbWUiOiJTbmFwaW5zdGEuYXBwX3RodW1iXzI4NzQwMTE3NF8xMDczMTQ1NTk2NjEyNTEyXzYzMDY3MDkyMjYyNzQ5OTI4NTNfbi53ZWJwIn0.e2Ht_7fJW0WFzycj9KDGaW8FEXk44OoABuZxSogSe9o" alt="Teacher Name">
+            <h2>Mr Nitish kumar jha</h2>
+            <p>Your dedication and passion for teaching have made a lasting impact on all of us. We are truly grateful for everything you have done. Happy Teacher's Day!</p>
+        </div>
+        <div class="teacher-card">
+            <img src="https://yt3.googleusercontent.com/ytc/AIdro_nN5W4_UUX-b7JwC1K3fLVqp7_ac9dv_ExdDCt6nHDAiNU=s160-c-k-c0x00ffffff-no-rj" alt="Teacher Name">
+            <h2>Ms Ritesh kumar jha</h2>
+            <p>Your guidance and support have been invaluable to us. We appreciate all your hard work and dedication. Wishing you a Happy Teacher's Day!</p>
+        </div>
+        <div class="teacher-card">
+            <img src="https://i.imghippo.com/files/6Tx611725471870.jpg" alt="Teacher Name">
+            <h2>Danish sheikh</h2>
+            <p>Thank you for always inspiring us to learn and grow. Your enthusiasm for teaching is contagious. Happy Teacher's Day!</p>
+        </div>
+        <div class="teacher-card">
+            <img src="https://d.rapidcdn.app/snapinsta?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJodHRwczovL3Njb250ZW50LWF0bDMtMi5jZG5pbnN0YWdyYW0uY29tL3YvdDUxLjI5MzUwLTE1LzQ0OTE0NTkxMl80NTIxNDU4NjQxOTY2MzdfMjMzNzI5NDExMjA3MTUzOTMwN19uLndlYnA_c3RwPWRzdC1qcGdfZTM1X3M2NDB4NjQwX3NoMC4wOCZlZmc9ZXlKMlpXNWpiMlJsWDNSaFp5STZJbWx0WVdkbFgzVnliR2RsYmk0eE1EZ3dlREV3T0RBdWMyUnlMbVl5T1RNMU1DNWtaV1poZFd4MFgybHRZV2RsSW4wJl9uY19odD1zY29udGVudC1hdGwzLTIuY2RuaW5zdGFncmFtLmNvbSZfbmNfY2F0PTEwNSZfbmNfb2hjPWF5MU1nRGxLeU1vUTdrTnZnRXVRR25uJl9uY19naWQ9NzE1ZGI3MzI0Y2I2NGU1OGE3OGFkZDJmM2JiNGI3YmMmZWRtPUFQczE3Q1VCQUFBQSZjY2I9Ny01Jm9oPTAwX0FZQXNuM1p3WHdUZWRIV2hHcmJwb1BOWkxpVVBSOVNTakV1dnZEdUE5YXBxd3cmb2U9NjZERTdDRTkmX25jX3NpZD0xMGQxM2IiLCJmaWxlbmFtZSI6IlNuYXBpbnN0YS5hcHBfdGh1bWJfNDQ5MTQ1OTEyXzQ1MjE0NTg2NDE5NjYzN18yMzM3Mjk0MTEyMDcxNTM5MzA3X24ud2VicCJ9.vGiXlFFD2vSLZEdwxce45Wj8PlpnFjk5z0DyhHsjPOE" alt="Teacher Name">
+            <h2>ER Navin kumar singh</h2>
+            <p>You have a unique way of making learning fun and exciting. We are so lucky to have you as our teacher. Happy Teacher's Day!</p>
+        </div>
+        <div class="teacher-card">
+            <img src="1725474207629.jpg" alt="Teacher Name">
+            <h2>Miss Radha Kr </h2>
+            <p>Your patience and understanding have made all the difference. Thank you for believing in us and pushing us to achieve our best. Happy Teacher's Day!</p>
+        </div>
+              <div class="teacher-card">
+            <img src="https://d.rapidcdn.app/snapinsta?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJodHRwczovL3Njb250ZW50LmNkbmluc3RhZ3JhbS5jb20vdi90NTEuMjkzNTAtMTUvNDI0NDk5MzUzXzcxMjg1NTM5NDI1NDk2M185MTI4MTA1MzIxMzM0OTE1Mjg4X24ud2VicD9zdHA9ZHN0LWpwZ19lMzVfczY0MHg2NDBfc2gwLjA4JmVmZz1leUoyWlc1amIyUmxYM1JoWnlJNkltbHRZV2RsWDNWeWJHZGxiaTR4TkRRd2VERXdPREF1YzJSeUxtWXlPVE0xTUM1a1pXWmhkV3gwWDJsdFlXZGxJbjAmX25jX2h0PXNjb250ZW50LmNkbmluc3RhZ3JhbS5jb20mX25jX2NhdD0xMDcmX25jX29oYz04emRQUmFMT2cxUVE3a052Z0hwX0R2bCZlZG09QVBzMTdDVUJBQUFBJmNjYj03LTUmb2g9MDBfQVlBMkdKbkNaTU4yNVFXZTlhZ1R2dUhDTEotS0Q2UnhWcmRSQ25lS2xpaC1PZyZvZT02NkRFNUY0QiZfbmNfc2lkPTEwZDEzYiIsImZpbGVuYW1lIjoiU25hcGluc3RhLmFwcF90aHVtYl80MjQ0OTkzNTNfNzEyODU1Mzk0MjU0OTYzXzkxMjgxMDUzMjEzMzQ5MTUyODhfbi53ZWJwIn0.TU67jgG1IIxUat0YqdPUjmKCWk0Ci6R6FWJbHZnNt50" alt="Niraj Kumar">
+            <h2>Niraj Kumar</h2>
+            <p>Your commitment to our education and personal growth is deeply appreciated. Happy Teacher's Day!</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 - Wishing all the wonderful teachers a very Happy Teacher's Day!</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/ias.nirajkumar/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/niraj"><i class="fab fa-facebook"></i></a>
+        </div>
+    </footer>
+      <script>
+    // Wait for the DOM to fully load
+    document.addEventListener('DOMContentLoaded', function() {
+        const teacherCards = document.querySelectorAll('.teacher-card');
+        
+        // Function to check if an element is in the viewport
+        function isInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Function to handle the scroll event
+        function handleScroll() {
+            teacherCards.forEach(card => {
+                if (isInViewport(card)) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Event listener for scrolling
+        window.addEventListener('scroll', handleScroll);
+
+        // Initial call to handleScroll in case some elements are in view on page load
+        handleScroll();
+
+        // Scroll down animation
+        const scrollDownIcon = document.querySelector('.scroll-down a');
+        scrollDownIcon.addEventListener('click', function(e) {
+            e.preventDefault();
+            const gallerySection = document.querySelector('#gallery');
+            gallerySection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Background music control
+        const audio = document.querySelector('audio');
+        document.addEventListener('click', function() {
+            if (audio.paused) {
+                audio.play();
+            }
+        });
+
+        // Card hover effect (optional)
+        teacherCards.forEach(card => {
+            card.addEventListener('mouseover', () => {
+                card.style.transform = 'scale(1.05)';
+            });
+            card.addEventListener('mouseout', () => {
+                card.style.transform = 'scale(1)';
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
